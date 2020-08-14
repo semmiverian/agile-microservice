@@ -1,4 +1,5 @@
 const {getDatabase, db} = require('./../config/createMongoConnection')
+const {ObjectId} = require('mongodb')
 
 class User {
   static database() {
@@ -11,6 +12,10 @@ class User {
 
   static create(data) {
     return this.database().insertOne(data)
+  }
+
+  static findById(id) {
+    return this.database().findOne({_id: ObjectId(id)})
   }
 }
 

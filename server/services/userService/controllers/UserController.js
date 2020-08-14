@@ -11,6 +11,12 @@ class UserController {
 
     res.status(201).json(result.ops[0])
   }
+
+  static async findById(req, res) {
+    const user = await User.findById(req.params.id)
+
+    res.status(200).json(user)
+  }
 }
 
 module.exports = UserController

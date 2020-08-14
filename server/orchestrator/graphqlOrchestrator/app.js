@@ -33,6 +33,7 @@ const typeDefs = gql`
     books: [Book]
     message: String
     users: [User]
+    user(id: ID): User
   }
 
   type Response {
@@ -60,6 +61,11 @@ const resolvers = {
     },
     async users() {
       const {data} = await axios.get('http://localhost:3001/users')
+
+      return data
+    },
+    async user(parent, args) {
+      const {data} = await axios.get(`http://localhost:3001/users/${args.id}`)
 
       return data
     }
