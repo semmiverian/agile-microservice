@@ -7,9 +7,9 @@ class UserController {
   }
 
   static async create(req, res) {
-    await User.create(req.body)
+    const result = await User.create(req.body)
 
-    res.status(201).json({status: 'ok', message: 'Succesfully inserting new document'})
+    res.status(201).json(result.ops[0])
   }
 }
 
