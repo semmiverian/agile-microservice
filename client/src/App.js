@@ -5,6 +5,7 @@ import client from './config/apolloClient'
 import './tailwind.css'
 import Navigation from './components/Navigation'
 import Home from './containers/Home'
+import LocalUser from './containers/LocalUser'
 import AddUser from './containers/AddUser'
 import Detail from './containers/Detail'
 
@@ -19,6 +20,10 @@ function App() {
             <Switch>
               <Route path="/" exact>
                 <Home />
+              </Route>
+
+              <Route path="/localUser">
+                <LocalUser />
               </Route>
 
               <Route path="/add">
