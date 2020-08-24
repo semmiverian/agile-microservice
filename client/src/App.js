@@ -8,6 +8,7 @@ import Home from './containers/Home'
 import LocalUser from './containers/LocalUser'
 import AddUser from './containers/AddUser'
 import Detail from './containers/Detail'
+import BookSubscription from './containers/BookSubscription'
 
 function App() {
   return (
@@ -24,6 +25,10 @@ function App() {
 
               <Route path="/localUser">
                 <LocalUser />
+              </Route>
+
+              <Route path="/subscription">
+                <BookSubscription />
               </Route>
 
               <Route path="/add">
